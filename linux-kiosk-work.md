@@ -890,14 +890,12 @@ function disable() {
   Main.layoutManager.addTopChrome(Main.layoutManager.keyboardBox);
 }
 ```
-Save ext.js and run the last command.
-
 After this run the last command:
 ```
 mv ext.js extension.js
 ```
 
-That is how you make the keyboard better. Feel free to customize it better to your liking if you feel like it. 
+Feel free to customize it better to your liking if you feel like it. 
 
 
 ### Conclusion
