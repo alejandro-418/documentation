@@ -1,4 +1,4 @@
-Other projects that I have done that I have not wrote documentation for: 
+Projects that I have done that I have not wrote documentation for: 
 * LoRaWAN university research project **(COMING SOON)**
 * Network Attached Storage (NAS)
 * Coreboot/Libreboot 2 Thinkpads (T480s & T440p)
