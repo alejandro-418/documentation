@@ -133,6 +133,8 @@ systemctl enable tlp
 Network / Bluetooth:
 ```
 systemctl enable NetworkManager systemctl enable bluetooth
+
+
 ```
 
 ---
@@ -173,3 +175,32 @@ reboot
 | **AMD dGPU + AMD iGPU (ThinkPad E-series)**    | Already covered by `mesa` & `amdgpu` (kernel). Add:  <br>`pacman -S xf86-video-amdgpu` if X11, and `sway`/`wlroots` works out-of-box               |
 | **Intel CPU + NVIDIA dGPU (Optimus ThinkPad)** | Enable multilib, then:  <br>`pacman -S nvidia nvidia-prime lib32-nvidia-utils`  <br>Use **`prime-run <app>`** or `env __NV_PRIME_RENDER_OFFLOAD=1` |
 | **ThinkPads**                                  | Install `tlp tlp-rdw` and enable `tlp.service` for power saving.<br>firmware updates via `fwupd`                                                   |
+
+
+## After main install
+
+### 1 Packages
+
+```
+
+sudo pacman -S xdg-user-dirs base-devel git
+xdg-user-dirs-update
+```
+
+### Network Configuration
+
+```
+sudo vim /etc/iwd/main.conf
+[General]
+EnableNetworkConfiguration=true
+
+[Network]
+DHCP=yes
+
+sudo vim /etc/system/logind.conf
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+
+sudo systemctl enable --now systemd-resolved.service #Handle DNS
+```          
