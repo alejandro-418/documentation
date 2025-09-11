@@ -182,12 +182,12 @@ reboot
 ### 1 Packages
 
 ```
-
 sudo pacman -S xdg-user-dirs base-devel git
 xdg-user-dirs-update
 ```
+---
 
-### Network Configuration
+### 2 Network Configuration
 
 ```
 sudo vim /etc/iwd/main.conf
@@ -204,3 +204,4 @@ HandleLidSwitchDocked=ignore
 
 sudo systemctl enable --now systemd-resolved.service #Handle DNS
 ```          
+
